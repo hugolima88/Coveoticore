@@ -1,22 +1,16 @@
-﻿using Coveoticore.Website.Sitecore;
-using Glass.Mapper.Sc.Configuration.Attributes;
-
-namespace Coveoticore.Website.Models
+﻿namespace Coveoticore.Website.Models
 {
-    //[SitecoreType(TemplateId = Templates.USPC, AutoMap = true)]
     public class USPCModel
     {
-        public virtual string ID { get; set; }
+        public string SingleLineText { get; set; }
 
-        public virtual string Field1 { get; set; }
+        public string MultiLineText { get; set; }
 
-        public virtual string Field2 { get; set; }
+        public string DateTime { get; set; }
 
-        public virtual string Field3 { get; set; }
+        public virtual long Number { get; set; }
 
-        public virtual int Field4 { get; set; }
-
-        public virtual string Field5 { get; set; }
+        public string Image { get; set; }
 
     }
 }

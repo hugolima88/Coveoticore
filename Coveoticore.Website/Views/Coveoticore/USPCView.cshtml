@@ -4,6 +4,10 @@
 @{
     if (Model != null)
     {
-        <span>@Model.Item.Fields["Field1"]</span>
+        <div>@Html.Sitecore().Field("SingleLineText")</div>
+        <div>@Html.Sitecore().Field("MultiLineText")</div>
+        <div>@Html.Sitecore().Field("DateTime")</div>
+        <div>@Html.Sitecore().Field("Number")</div>
+        <div>@Html.Sitecore().Field("Image")</div>
     }
 }

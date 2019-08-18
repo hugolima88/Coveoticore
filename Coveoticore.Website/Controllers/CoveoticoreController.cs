@@ -13,7 +13,11 @@ namespace Coveoticore.Website.Controllers
 
             var model = new USPCModel
             {
-                Field1 = renderingItem[nameof(USPCModel.Field1)]
+                SingleLineText = renderingItem[nameof(USPCModel.SingleLineText)],
+                MultiLineText = renderingItem[nameof(USPCModel.MultiLineText)],
+                DateTime = renderingItem[nameof(USPCModel.DateTime)],
+                Number = long.Parse(renderingItem[nameof(USPCModel.Number)]),
+                Image = renderingItem[nameof(USPCModel.Image)],
             };
 
             return View(model);

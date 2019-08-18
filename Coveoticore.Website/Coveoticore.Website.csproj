@@ -171,7 +171,6 @@
     </Compile>
     <Compile Include="Models\USPCModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sitecore\Templates.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
