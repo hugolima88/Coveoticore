@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.645
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coveoticore.Benchmarks", "Coveoticore.Benchmarks.csproj", "{2770E788-A6E7-48B1-B107-24A1D3329FDF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coveoticore.Benchmarks", "Coveoticore.Benchmarks\Coveoticore.Benchmarks.csproj", "{2770E788-A6E7-48B1-B107-24A1D3329FDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coveoticore.Website", "Coveoticore.Website\Coveoticore.Website.csproj", "{D5D46B3F-AC63-4372-B950-CECC456BD2A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{2770E788-A6E7-48B1-B107-24A1D3329FDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2770E788-A6E7-48B1-B107-24A1D3329FDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2770E788-A6E7-48B1-B107-24A1D3329FDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5D46B3F-AC63-4372-B950-CECC456BD2A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5D46B3F-AC63-4372-B950-CECC456BD2A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5D46B3F-AC63-4372-B950-CECC456BD2A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5D46B3F-AC63-4372-B950-CECC456BD2A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

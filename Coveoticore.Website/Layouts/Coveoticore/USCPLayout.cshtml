@@ -1,0 +1,17 @@
+﻿@using Sitecore.Mvc
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>@Html.Sitecore().CurrentItem.DisplayName</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+</head>
+<body style="padding: 5px">
+<div id="MainPanel">
+    <div id="center-column">
+        @Html.Sitecore().Placeholder("main")
+    </div>
+</div>
+</body>
+</html>
