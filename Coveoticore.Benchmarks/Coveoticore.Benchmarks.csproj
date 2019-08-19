@@ -96,8 +96,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Logger\Logger.cs" />
+    <Compile Include="Logger\ConsoleLogger.cs" />
+    <Compile Include="Logger\ILogger.cs" />
+    <Compile Include="Logger\SitecoreLogger.cs" />
     <Compile Include="Logger\LogManager.cs" />
+    <Compile Include="USPC\Fight2\Benchmark.cs" />
     <Compile Include="USPC\Octagon\Contender.cs" />
     <Compile Include="USPC\Octagon\Executer.cs" />
     <Compile Include="USPC\Figth1\Benchmark.cs" />
@@ -109,7 +112,8 @@
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="USPC\Fight2\Scripts\CreateItems.ps1" />
+    <None Include="USPC\Fight2\Scripts\CreatePageWithControllerRenderings.ps1" />
+    <None Include="USPC\Fight2\Scripts\CreatePageWithViewRenderings.ps1" />
     <None Include="USPC\Figth1\Coveoticore.USPC.Fight1.config" />
   </ItemGroup>
   <ItemGroup />

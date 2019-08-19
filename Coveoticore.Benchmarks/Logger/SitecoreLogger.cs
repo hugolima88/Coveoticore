@@ -2,11 +2,11 @@
 
 namespace Coveoticore.Benchmarks.Logger
 {
-    public class Logger : ILogger
+    public class SitecoreLogger : ILogger
     {
         private readonly Type m_LoggerType;
 
-        public Logger(Type p_LoggerType)
+        public SitecoreLogger(Type p_LoggerType)
         {
             m_LoggerType = p_LoggerType;
         }
@@ -15,10 +15,5 @@ namespace Coveoticore.Benchmarks.Logger
         {
             Sitecore.Diagnostics.Log.Info(p_Message, m_LoggerType);
         }
-    }
-
-    public interface ILogger
-    {
-        void Info(string p_Message);
     }
 }

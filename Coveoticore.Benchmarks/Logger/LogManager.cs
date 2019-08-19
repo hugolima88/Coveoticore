@@ -9,9 +9,14 @@ namespace Coveoticore.Benchmarks.Logger
 {
     public static class LogManager
     {
-        public static ILogger GetInstance()
+        public static ILogger GetSitecoreInstance()
         {
-            return new Logger(MethodBase.GetCurrentMethod().DeclaringType);
+            return new SitecoreLogger(MethodBase.GetCurrentMethod().DeclaringType);
+        }
+
+        public static ILogger GetConsoleLoggerInstance()
+        {
+            return new ConsoleLogger();
         }
     }
 }

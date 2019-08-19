@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using Coveoticore.Benchmarks.Logger;
 using Coveoticore.Benchmarks.USPC.Octagon;
+using log4net.spi;
 using Sitecore.Collections;
 using Sitecore.Data;
 using Sitecore.Data.Items;
@@ -37,7 +38,7 @@ namespace Coveoticore.Benchmarks.USPC.Figth1
                     }
                 };
 
-                Executer bruceBuffer = new Executer(fightNightEvent);
+                Executer bruceBuffer = new Executer(fightNightEvent, LogManager.GetSitecoreInstance());
 
                 bruceBuffer.LetsGetItOn();
             }

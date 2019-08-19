@@ -6,12 +6,12 @@ namespace Coveoticore.Benchmarks.USPC.Octagon
     public class Executer : IExecuter
     {
         private readonly FightNightEvent m_FightNightEvent;
+        private readonly ILogger m_Logger;
 
-        private static readonly ILogger s_Logger = LogManager.GetInstance();
-
-        public Executer(FightNightEvent p_FightNightEvent)
+        public Executer(FightNightEvent p_FightNightEvent, ILogger p_Logger)
         {
             m_FightNightEvent = p_FightNightEvent;
+            m_Logger = p_Logger;
         }
 
         public void LetsGetItOn()
@@ -22,7 +22,7 @@ namespace Coveoticore.Benchmarks.USPC.Octagon
             string winner = redCornerResult < blueCornerResult ? m_FightNightEvent.RedCornerContender.Name
                 : m_FightNightEvent.BlueCornerContender.Name;
 
-            s_Logger.Info($"{m_FightNightEvent.Name} - (Judges Decision): Ladies and gentlemen, {winner} is the winner of the night!");
+            m_Logger.Info($"{m_FightNightEvent.Name} - (Judges Decision): Ladies and gentlemen, {winner} is the winner of the night!");
         }
 
         private long ExecuteFigther(Contender p_Contender)
@@ -35,9 +35,9 @@ namespace Coveoticore.Benchmarks.USPC.Octagon
                 stopWatch.Stop();
 
                 totalExecutionTime += stopWatch.ElapsedMilliseconds;
-                s_Logger.Info($"{m_FightNightEvent.Name} - {p_Contender.Name} (Round {i}): {stopWatch.ElapsedMilliseconds}");
+                m_Logger.Info($"{m_FightNightEvent.Name} - {p_Contender.Name} (Round {i}): {stopWatch.ElapsedMilliseconds}");
             }
-            s_Logger.Info($"{m_FightNightEvent.Name} - {p_Contender.Name} (Average): {totalExecutionTime/m_FightNightEvent.Rounds}");
+            m_Logger.Info($"{m_FightNightEvent.Name} - {p_Contender.Name} (Average): {totalExecutionTime/m_FightNightEvent.Rounds}");
             return totalExecutionTime;
         }
     }
