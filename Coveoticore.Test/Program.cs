@@ -8,9 +8,6 @@ namespace Coveoticore.Test
     {
         static void Main(string[] args)
         {
-            // Give some time to the console open properly before start benchmarking
-            Thread.Sleep(5000);
-
             Benchmark fight2 = new Benchmark();
             fight2.Process();
 

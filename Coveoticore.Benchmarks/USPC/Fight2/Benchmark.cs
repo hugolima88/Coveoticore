@@ -11,7 +11,18 @@ namespace Coveoticore.Benchmarks.USPC.Fight2
 {
     public class Benchmark
     {
+        private readonly WebClient m_WebClient;
+
         private const string SITECORE_INSTANCE = "http://coveoticore-uspc-sc827/";
+
+        public Benchmark()
+        {
+            m_WebClient = new WebClient();
+
+            //Warm-up
+            LoadPageWithViewRenderings(10);
+            LoadPageWithControllerRenderings(10);
+        }
 
         public void Process()
         {
@@ -48,8 +59,7 @@ namespace Coveoticore.Benchmarks.USPC.Fight2
 
         private string DownloadHtmlPage(string p_URL)
         {
-            WebClient webClient = new WebClient();
-            return webClient.DownloadString(p_URL);
+            return m_WebClient.DownloadString(p_URL);
         }
     }
 }
