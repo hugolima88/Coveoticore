@@ -6,19 +6,10 @@ namespace Coveoticore.Website.Controllers
 {
     public class CoveoticoreController : Controller
     {
-
         public ActionResult USPC()
         {
-            var renderingItem = RenderingContext.CurrentOrNull.Rendering.Item;
-
-            var model = new USPCModel
-            {
-                SingleLineText = renderingItem[nameof(USPCModel.SingleLineText)],
-                MultiLineText = renderingItem[nameof(USPCModel.MultiLineText)],
-                DateTime = renderingItem[nameof(USPCModel.DateTime)],
-                Number = long.Parse(renderingItem[nameof(USPCModel.Number)]),
-                Image = renderingItem[nameof(USPCModel.Image)],
-            };
+            var model = new USPCModel();
+            model.Initialize(RenderingContext.CurrentOrNull.Rendering);
 
             return View(model);
         }

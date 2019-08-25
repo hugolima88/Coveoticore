@@ -1,5 +1,5 @@
 ﻿#Parameters
-$TotalOfRenderings = 100
+$TotalOfRenderings = 1
 $RenderingId = "{1EF2E82A-AAB7-44CD-B20F-0E8A28D72793}"
 
 #Constants

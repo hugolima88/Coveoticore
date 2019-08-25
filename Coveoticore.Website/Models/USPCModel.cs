@@ -1,16 +1,19 @@
-﻿namespace Coveoticore.Website.Models
+﻿using System.Web;
+using Sitecore.Mvc.Presentation;
+using Sitecore.Web.UI.WebControls;
+
+namespace Coveoticore.Website.Models
 {
-    public class USPCModel
+    public class USPCModel : RenderingModel
     {
-        public string SingleLineText { get; set; }
+        public HtmlString SingleLineText => new HtmlString(FieldRenderer.Render(Item, "SingleLineText"));
 
-        public string MultiLineText { get; set; }
+        public HtmlString MultiLineText => new HtmlString(FieldRenderer.Render(Item, "MultiLineText"));
 
-        public string DateTime { get; set; }
+        public HtmlString DateTime => new HtmlString(FieldRenderer.Render(Item, "DateTime"));
 
-        public virtual long Number { get; set; }
+        public HtmlString Number => new HtmlString(FieldRenderer.Render(Item, "Number"));
 
-        public string Image { get; set; }
-
+        public HtmlString Image => new HtmlString(FieldRenderer.Render(Item, "Image"));
     }
 }
