@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Net;
 using Coveoticore.Benchmarks.Logger;
 using Coveoticore.Benchmarks.USPC.Octagon;
 
@@ -11,17 +6,18 @@ namespace Coveoticore.Benchmarks.USPC.Fight2
 {
     public class Benchmark
     {
-        private readonly WebClient m_WebClient;
-
+        private const int TOTAL_OF_RENDERINGS = 100;
         private const string SITECORE_INSTANCE = "http://coveoticore-uspc-sc827/";
+
+        private readonly WebClient m_WebClient;
 
         public Benchmark()
         {
             m_WebClient = new WebClient();
 
             //Warm-up
-            LoadPageWithViewRenderings(10);
-            LoadPageWithControllerRenderings(10);
+            LoadPageWithViewRenderings(TOTAL_OF_RENDERINGS);
+            LoadPageWithControllerRenderings(TOTAL_OF_RENDERINGS);
         }
 
         public void Process()
@@ -32,13 +28,13 @@ namespace Coveoticore.Benchmarks.USPC.Fight2
                 Rounds = 5,
                 BlueCornerContender = new Contender
                 {
-                    Name = "10 View Renderings",
-                    Action = () => { LoadPageWithViewRenderings(10); }
+                    Name = TOTAL_OF_RENDERINGS + " View Renderings",
+                    Action = () => { LoadPageWithViewRenderings(TOTAL_OF_RENDERINGS); }
                 },
                 RedCornerContender = new Contender
                 {
-                    Name = "10 Controller Renderings",
-                    Action = () => { LoadPageWithControllerRenderings(10); }
+                    Name = TOTAL_OF_RENDERINGS + " Controller Renderings",
+                    Action = () => { LoadPageWithControllerRenderings(TOTAL_OF_RENDERINGS); }
                 }
             };
 
